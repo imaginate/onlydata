@@ -1,4 +1,4 @@
-## [OnlyData](http://onlydata.tech) license
+## [OnlyData](http://onlydata.tech) License
 
 **Copyright 2016 Adam A Smith ([imaginate.life](http://imaginate.life))**
 
