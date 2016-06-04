@@ -73,6 +73,12 @@ str = od.makeFile(obj, file);
 - [Keys](#keys)
 - [Values](#values)
 - [Data Types](#data-types)
+  - [Boolean](#boolean)
+  - [String](#string)
+  - [Number](#number)
+  - [Map](#map)
+  - [List](#list)
+  - [Null](#null)
 
 ### Files
 - Each OnlyData file is equivalent to one hash map.
@@ -93,6 +99,18 @@ str = od.makeFile(obj, file);
 - Values can be any [data type](#data-types).
 
 ### Data Types
+
+#### Boolean
+
+#### String
+
+#### Number
+
+#### Map
+
+#### List
+
+#### Null
 
 ## Other Details
 **contributing:** [see contributing guide](https://github.com/imaginate/onlydata/blob/master/CONTRIBUTING.md)<br>
