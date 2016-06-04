@@ -69,6 +69,18 @@ str = od.makeFile(obj, file);
 ```
 
 ## Syntax
+- [Files](#files)
+- [Keys](#keys)
+- [Values](#values)
+- [Data Types](#data-types)
+
+### Files
+
+### Keys
+
+### Values
+
+### Data Types
 
 ## Other Details
 **contributing:** [see contributing guide](https://github.com/imaginate/onlydata/blob/master/CONTRIBUTING.md)<br>
