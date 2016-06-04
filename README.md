@@ -7,7 +7,7 @@ _OnlyData_ is a simple, flexible, and human-readable data serialization language
 # Comment
 bool1 = true
 str2  = a string
-obj3  = {
+map3  = {
   num1: 5
   nil2: null
 }
