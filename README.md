@@ -75,10 +75,22 @@ str = od.makeFile(obj, file);
 - [Data Types](#data-types)
 
 ### Files
+- Each OnlyData file is equivalent to one hash map.
+- [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoding is mandatory.
+- File extensions must be ```.od```, ```.only```, or ```.onlydata```.
+- Line breaks are automatically converted to [line feeds](https://en.wikipedia.org/wiki/Newline).
 
 ### Keys
+- Keys must begin with a letter, a-z (not case-sensitive), or an underscore.
+- Keys can contain letters, numbers, underscores, or dashes.
+- Base keys use the equal sign, ```=```, to attribute value.
+- Nested keys use the colon, ```:```, to attribute value.
+- Whitespace is trimmed before and after each key.
 
 ### Values
+- All values except for [string blocks](#string), [maps](#map), and [lists](#list) are terminated by line breaks.
+- Whitespace is trimmed before and after each value.
+- Values can be any [data type](#data-types).
 
 ### Data Types
 
