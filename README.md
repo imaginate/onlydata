@@ -3,6 +3,32 @@
 _OnlyData_ is a simple, flexible, and human-readable data serialization language that is easily converted into JavaScript objects.
 
 ## Example
+```
+# Comment
+bool1 = true
+str2  = a string
+obj3  = {
+  num1: 5
+  emp2: null
+}
+list4 = [ 0, 1, 3, magic string ]
+str6 = how could you # Comment all you like I won't hear
+str7 = 'listen here # We are all ears'
+str8 = " keep your space bro "
+<< str9
+# Still can't here you
+<div>
+  <p>Lorem ipsum madness!</p>
+</div>
+>>
+<<< str10
+<ol>
+  <li>I am keeping your comment!</li>
+  <li># Why?</li>
+  <li>Because I want too.</li>
+</ol>
+>>>
+```
 
 ## Install
 ```bash
