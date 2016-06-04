@@ -101,6 +101,12 @@ str = od.makeFile(obj, file);
 ### Data Types
 
 #### Boolean
+The standard ```true``` or ```false``` boolean values with optional ```yes``` or ```no``` aliases. Booleans are **not case-sensitive**.
+```
+key = false
+key = True
+key = YES
+```
 
 #### String
 
