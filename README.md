@@ -16,17 +16,17 @@ str6 = how could you # Comment all you like I won't hear
 str7 = 'listen here # We are all ears'
 str8 = " keep your space bro "
 << str9
-# Still can't here you
-<div>
-  <p>Lorem ipsum madness!</p>
-</div>
+  # Still can't hear you
+  <div>
+    <p>Lorem ipsum madness!</p>
+  </div>
 >>
 <<< str10
-<ol>
-  <li>I am keeping your comment!</li>
-  <li># Why?</li>
-  <li>Because I want too.</li>
-</ol>
+  <ol>
+    <li>I am keeping your comment!</li>
+    <li># Why?</li>
+    <li>Because I want too.</li>
+  </ol>
 >>>
 ```
 
