@@ -36,6 +36,37 @@ npm install onlydata
 ```
 
 ## JS API
+```javascript
+
+var od = require('onlydata');
+
+// values
+var obj = { an: 'object', aka: 'hash map' };
+var str = 'a string of OnlyData syntax';
+var file = 'path/to/file.onlydata';
+// or      'path/to/file.only';
+// or      'path/to/file.od';
+
+// parse string
+obj = od(str);
+obj = od.parse(str);
+obj = od.parseString(str);
+
+// parse file
+obj = od(file);
+obj = od.parse(file);
+obj = od.parseFile(file);
+
+// make string
+str = od(obj);
+str = od.make(obj);
+str = od.makeString(obj);
+
+// make file
+str = od(obj, file);
+str = od.make(obj, file);
+str = od.makeFile(obj, file);
+```
 
 ## Syntax
 
