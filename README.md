@@ -1,4 +1,4 @@
-# OnlyData [![npm version](https://img.shields.io/badge/npm-1.0.0--alpha-yellow.svg?style=flat)](https://www.npmjs.com/package/onlydata)
+# OnlyData [![npm version](https://img.shields.io/badge/npm-0.0.1--alpha-red.svg?style=flat)](https://www.npmjs.com/package/onlydata)
 
 _OnlyData_ is a simple, flexible, and human-readable data serialization language that is easily converted into JavaScript objects.
 

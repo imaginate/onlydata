@@ -1,0 +1,24 @@
+{
+  "name": "onlydata",
+  "version": "0.0.1-alpha",
+  "description": "a simple data serialization language",
+  "main": "onlydata.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imaginate/onlydata.git"
+  },
+  "author": "Adam Smith <adam@imaginate.life> (https://imaginate.life)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/imaginate/onlydata/issues"
+  },
+  "homepage": "http://onlydata.tech",
+  "dependencies": {
+    "node-vitals": "4.x"
+  },
+  "devDependencies": {
+    "mocha": "2.x",
+    "node-act": "1.x",
+    "log-ocd": ">1.0.0-beta"
+  }
+}
