@@ -9,7 +9,7 @@ bool1 = true
 str2  = a string
 obj3  = {
   num1: 5
-  emp2: null
+  nil2: null
 }
 list4 = [ 0, 1, 3, magic string ]
 str6 = how could you # Comment all you like I won't hear
