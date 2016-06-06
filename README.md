@@ -15,19 +15,25 @@ list4 = [ 0, 1, 3, magic string ]
 str6 = how could you # Comment all you like I won't hear
 str7 = 'listen here # We are all ears'
 str8 = " keep your space bro "
-<< str9
+str9 = <<
   # Still can't hear you
   <div>
     <p>Lorem ipsum madness!</p>
   </div>
+  # If only a trimming could be avoided
+  # But alas, my whitespace and line breaks could not be saved
 >>
-<<< str10
+str10 = <<<
   <ol>
-    <li>I am keeping your comment!</li>
+    <li>I am keeping your comments!</li>
     <li># Why?</li>
-    <li>Because I want too.</li>
+    <li>Because I want to.</li>
+    <li># Ok</li>
+    <li>Plus your whitespace too.</li>
   </ol>
 >>>
+bool11 = No
+map12  = import yes-siree.od
 ```
 
 ## Install
