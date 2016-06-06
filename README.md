@@ -79,6 +79,7 @@ str = od.makeFile(obj, file);
   - [Map](#map)
   - [List](#list)
   - [Null](#null)
+- [Import](#import)
 
 ### Files
 - Each OnlyData file is equivalent to one hash map.
@@ -117,6 +118,8 @@ key = YES
 #### List
 
 #### Null
+
+### Import
 
 ## Other Details
 **contributing:** [see contributing guide](https://github.com/imaginate/onlydata/blob/master/CONTRIBUTING.md)<br>
