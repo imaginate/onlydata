@@ -47,8 +47,8 @@ npm install onlydata
 var od = require('onlydata');
 
 // values
-var obj = { an: 'object', aka: 'hash map' };
-var str = 'a string of OnlyData syntax';
+var str = 'an string of OnlyData syntax';
+var obj = { an: 'object', aka: 'map' };
 var file = 'path/to/file.onlydata';
 // or      'path/to/file.only';
 // or      'path/to/file.od';
@@ -88,7 +88,7 @@ str = od.makeFile(obj, file);
 - [Import](#import)
 
 ### Files
-- Each OnlyData file is equivalent to one hash map.
+- Each OnlyData file is equivalent to one [map](#map).
 - [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoding is mandatory.
 - File extensions must be ```.od```, ```.only```, or ```.onlydata```.
 - Line breaks are automatically converted to [line feeds](https://en.wikipedia.org/wiki/Newline).
@@ -159,7 +159,7 @@ num = 1,000
 ```
 
 #### Map
-Maps are simple [key](#keys)/[value](#values) hash maps. Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. For one line maps, key/value pairs must be separated by a comma, ```,```. For multi-line maps, key/value pairs must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing curly braces.
+Maps are simple [key](#keys)/[value](#values) [associative arrays](https://en.wikipedia.org/wiki/Associative_array). Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. For one line maps, key/value pairs must be separated by a comma, ```,```. For multi-line maps, key/value pairs must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing curly braces.
 ```
 map = { key: value, key: value }
 map = {
