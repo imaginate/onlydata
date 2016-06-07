@@ -116,6 +116,38 @@ key = YES
 ```
 
 #### String
+- **Basic String**<br>
+  All line-terminated values that do not match another data type are trimmed of whitespace and considered a string.
+
+    ```
+    str = I am a basic string.
+    ```
+
+- **Quoted String**<br>
+  One line strings can be enclosed by single, ```'```, or double, ```"```, quotation marks to improve clarity or to keep whitespace and hash marks, ```#```. Quoted strings must begin and end with the chosen quotation mark. Quotation marks within strings do not need any special attention (i.e. no backslash needed). Multi-line strings must be blocked.
+
+    ```
+    str = 'I am a quoted string.'
+    str = "I am a quoted string."
+    ```
+
+- **Blocked String**<br>
+  Multi-line strings must be enclosed by two or three angle brackets, ```<``` and ```>```. Blocked string values must begin with only the opening angle brackets for the first line and end with only the closing angle brackets for the last line. For two bracket enclosed strings, all line breaks, comments, and leading/ending whitespace (per line) is trimmed. For three bracket enclosed strings (aka **raw strings**), only the leading and ending line breaks are trimmed.
+
+    ```
+    str = <<
+    # Trims comments, whitespace, and line breaks
+    <div>
+      <p>I am a blocked string.</p>
+    </div>
+    >>
+    str = <<<
+    # Keeps comments, whitespace, and line breaks
+    <div>
+      <p>I am a raw string.</p>
+    </div>
+    >>>
+    ```
 
 #### Number
 
