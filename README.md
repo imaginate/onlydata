@@ -174,6 +174,18 @@ map = import path/to/file.onlydata
 ```
 
 #### List
+Lists are simple indexed [arrays](https://en.wikipedia.org/wiki/Array_data_type) of [values](#values). Lists must be enclosed with square brackets, ```[``` and ```]```. For one line lists, values must be separated by a comma, ```,```. For multi-line lists, values must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing square brackets.
+```
+list = [ value, value ]
+list = [
+  value
+  value
+]
+list = [
+  value,
+  value,
+]
+```
 
 #### Null
 
