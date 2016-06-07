@@ -33,7 +33,7 @@ str10 = <<<
   </ol>
 >>>
 bool11 = No
-map12  = import yes-siree.od
+map12 = import yes-siree.od
 ```
 
 ## Install
