@@ -78,6 +78,10 @@ od.setConfig('import-root', 'path/to/tree');
 
 // unset import root
 od.unsetConfig('import-root');
+
+// make new instance
+od = od.construct();
+od = od.constructor();
 ```
 
 ## Syntax
