@@ -72,6 +72,12 @@ str = od.makeString(obj);
 str = od(obj, file);
 str = od.make(obj, file);
 str = od.makeFile(obj, file);
+
+// set import root
+od.setConfig('import-root', 'path/to/tree');
+
+// unset import root
+od.unsetConfig('import-root');
 ```
 
 ## Syntax
