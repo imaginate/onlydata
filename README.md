@@ -150,6 +150,13 @@ key = YES
     ```
 
 #### Number
+All positive or negative whole numbers that pass the [Number.isSafeInteger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger) test. Numbers may be preceded by a plus, ```+```, or minus, ```-```, sign and contain commas, ```,```, for increased clarity. If a number does not pass the isSafeInteger test (e.g. a decimal) then it is saved as a string.
+```
+num = +5
+num = -5
+num = 1000
+num = 1,000
+```
 
 #### Map
 
