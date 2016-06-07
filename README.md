@@ -197,6 +197,12 @@ key = NIL
 ```
 
 ### Import
+Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). If a relative path is given, the file is searched in relation to the calling file. Otherwise the configured import root value (defaults to ```process.cwd()```) is used as the base path.
+```
+key = import ../path/to/file.od
+key = Import ./path/to/file.only
+key = IMPORT path/to/file.onlydata
+```
 
 ## Other Details
 **contributing:** [see contributing guide](https://github.com/imaginate/onlydata/blob/master/CONTRIBUTING.md)<br>
