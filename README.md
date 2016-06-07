@@ -99,6 +99,7 @@ str = od.makeFile(obj, file);
 - Base keys use the equal sign, ```=```, to attribute value.
 - Nested keys use the colon, ```:```, to attribute value.
 - Whitespace is trimmed before and after each key.
+- Keys must include a [value](#values).
 
 ### Values
 - All values except for [string blocks](#string), [maps](#map), and [lists](#list) are terminated by line breaks.
@@ -124,9 +125,10 @@ key = YES
     ```
 
 - **Quoted String**<br>
-  One line strings can be enclosed by single, ```'```, or double, ```"```, quotation marks to improve clarity or to keep whitespace and hash marks, ```#```. Quoted strings must begin and end with the chosen quotation mark. Quotation marks within strings do not need any special attention (i.e. no backslash needed). Multi-line strings must be blocked.
+  One line strings can be enclosed by single, ```'```, or double, ```"```, quotation marks to improve clarity, to keep whitespace and hash marks, ```#```, or to define an empty string. Quoted strings must begin and end with the chosen quotation mark. Quotation marks within strings do not need any special attention (i.e. no backslash needed). Multi-line strings must be blocked.
 
     ```
+    str = ''
     str = 'I am a quoted string.'
     str = "I am a quoted string."
     ```
@@ -188,6 +190,11 @@ list = [
 ```
 
 #### Null
+Null is used to represent all empty, missing, or undefined values. The keywords ```null``` or ```nil``` (not case-sensitive) are used to represent a null value.
+```
+key = null
+key = NIL
+```
 
 ### Import
 
