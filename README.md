@@ -159,6 +159,19 @@ num = 1,000
 ```
 
 #### Map
+Maps are simple [key](#keys)/[value](#values) hash maps. Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. For one line maps, key/value pairs must be separated by a comma, ```,```. For multi-line maps, key/value pairs must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing curly braces.
+```
+map = { key: value, key: value }
+map = {
+  key: value
+  key: value
+}
+map = {
+  key: value,
+  key: value,
+}
+map = import path/to/file.onlydata
+```
 
 #### List
 
