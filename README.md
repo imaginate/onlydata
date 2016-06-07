@@ -207,11 +207,11 @@ key = NIL
 ```
 
 ### Import
-Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). If a relative path is given, the file is searched in relation to the calling file. Otherwise the configured import root value (defaults to ```process.cwd()```) is used as the base path.
+Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). If a relative path is given, the file is searched in relation to the calling file. Otherwise the configured import root value or if unset, ```process.cwd()``` is used as the base path. To import all files from a directory into one map with the each filename (with leading path and extension trimmed) as key and its map as value, an asterisk, ```*```, may be used in place of the filename.
 ```
 key = import ../path/to/file.od
 key = Import ./path/to/file.only
-key = IMPORT path/to/file.onlydata
+key = import all/files/*.onlydata
 ```
 
 ## Other Details
