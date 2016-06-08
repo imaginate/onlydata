@@ -11,7 +11,7 @@ map3  = {
   num1: 5
   nil2: null
 }
-list4 = [ 0, 1, 3, magic string ]
+list4 = [ 0, 1, 3, 'string' ]
 str6 = how could you # Comment all you like I won't hear
 str7 = 'listen here # We are all ears'
 str8 = " keep your space bro "
@@ -119,7 +119,8 @@ od = od.constructor();
 ### Values
 - All values except for [string blocks](#string), [maps](#map), and [lists](#list) are terminated by line breaks.
 - Whitespace is trimmed before and after each value.
-- Values can be any [data type](#data-types).
+- Base values can be any [data type](#data-types).
+- Nested values (i.e. values within nested [maps](#map) or [lists](#list)) can be any one line [data type](#data-types).
 
 ### Data Types
 
@@ -176,7 +177,7 @@ num = 1,000
 ```
 
 #### Map
-Maps are simple [key](#keys)/[value](#values) [associative arrays](https://en.wikipedia.org/wiki/Associative_array). Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. For one line maps, key/value pairs must be separated by a comma, ```,```. For multi-line maps, key/value pairs must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing curly braces.
+Maps are simple [key](#keys)/[value](#values) [associative arrays](https://en.wikipedia.org/wiki/Associative_array). Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. For one line maps, key/value pairs must be separated by a comma, ```,```, and [strings](#string) must be quoted. For multi-line maps, key/value pairs must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing curly braces.
 ```
 map = { key: value, key: value }
 map = {
