@@ -17,9 +17,8 @@
 var make  = require('./make');
 var parse = require('./parse');
 
-var CONF_TYPE   = require('./config/types');
-var CONF_VALS   = require('./config/values');
-var newConfig   = require('./config/construct');
+var CONF_TYPE = require('./config/types');
+var CONF_VALS = require('./config/values');
 
 var vitals = require('./help/vitals');
 var each   = vitals.each;
@@ -29,7 +28,8 @@ var has    = vitals.has;
 var is     = vitals.is;
 var to     = vitals.to;
 
-var hasODExt = require('./help/has-onlydata-ext');
+var hasODExt  = require('./help/has-onlydata-ext');
+var normalize = require('./help/normalize-eol');
 
 /**
  * @return {Function<string, function>}
@@ -39,7 +39,7 @@ function newOnlyData() {
   /** @type {!Object} */
   var config;
 
-  config = newConfig();
+  config = fuse({}, CONF_VALS);
 
   /**
    * The base method acts as `onlydata.make` and `onlydata.parse` simultaneously.
@@ -147,8 +147,9 @@ function newOnlyData() {
         'eol':      'LF'
       });
     }
+    else str = normalize(str);
 
-    return parse(str);
+    return parse(config, str);
   };
 
   /**
@@ -163,7 +164,8 @@ function newOnlyData() {
     if ( !is.str(str)      ) throw new TypeError('invalid type for `str` param');
     if ( !str              ) throw new Error('the `str` param cannot be empty');
 
-    return parse(str);
+    str = normalize(str);
+    return parse(config, str);
   };
   od.parseStr = od.parseString;
 
@@ -188,7 +190,7 @@ function newOnlyData() {
       'encoding': 'utf8',
       'eol':      'LF'
     });
-    return parse(content);
+    return parse(config, content);
   };
 
   /**
