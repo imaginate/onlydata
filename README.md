@@ -73,11 +73,16 @@ str = od(obj, file);
 str = od.make(obj, file);
 str = od.makeFile(obj, file);
 
-// set import root
-od.setConfig('import-root', 'path/to/tree');
+// set config
+od.setConfig(key, val);
+od.setConfig({
+  key: val,
+  key: val
+});
 
-// unset import root
-od.unsetConfig('import-root');
+// reset config
+od.resetConfig(...prop);
+od.resetConfig(); // resets all props
 
 // make new instance
 od = od.construct();
@@ -207,7 +212,7 @@ key = NIL
 ```
 
 ### Import
-Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). If a relative path is given, the file is searched in relation to the calling file. Otherwise the configured import root value or if unset, ```process.cwd()``` is used as the base path. To import all files from a directory into one map with the each filename (with leading path and extension trimmed) as key and its map as value, an asterisk, ```*```, may be used in place of the filename.
+Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). If a relative path is given, the file is searched in relation to the calling file. Otherwise ```config['import-root'] || process.cwd();``` is used as the base path. To import all files from a directory into one map with the each filename (with leading path and extension trimmed) as key and its map as value, an asterisk, ```*```, may be used in place of the filename.
 ```
 key = import ../path/to/file.od
 key = Import ./path/to/file.only
