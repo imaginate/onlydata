@@ -136,8 +136,7 @@ function newOnlyData() {
   od.parse = function parseOnlyData(str) {
 
     if ( !arguments.length ) throw new Error('a `str` param must be given');
-    if ( !is.str(str)      ) throw new TypeError('invalid type for `str` param');
-    if ( !str              ) throw new Error('the `str` param cannot be empty');
+    if ( !is.str(str) ) throw new TypeError('invalid type for `str` param');
 
     if ( is.file(str) ) {
       if ( !hasODExt(str) ) throw new Error('invalid file extension for `str` param');
@@ -161,8 +160,7 @@ function newOnlyData() {
   od.parseString = function parseOnlyDataString(str) {
 
     if ( !arguments.length ) throw new Error('a `str` param must be given');
-    if ( !is.str(str)      ) throw new TypeError('invalid type for `str` param');
-    if ( !str              ) throw new Error('the `str` param cannot be empty');
+    if ( !is.str(str) ) throw new TypeError('invalid type for `str` param');
 
     str = normalize(str);
     return parse(config, str);
