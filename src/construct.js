@@ -22,6 +22,7 @@ var CONF_VALS   = require('./config/values');
 var newConfig   = require('./config/construct');
 
 var vitals = require('./help/vitals');
+var fuse   = vitals.fuse;
 var get    = vitals.get;
 var has    = vitals.has;
 var is     = vitals.is;
@@ -206,17 +207,18 @@ function newOnlyData() {
   };
 
   /**
-   * Resets a configuration property for an OnlyData instance.
+   * Resets one or all configuration properties for an OnlyData instance.
    *
-   * @param {string} key - a valid OnlyData config key
+   * @param {string=} key - if defined must be a valid OnlyData config key
    */
   od.resetConfig = function resetOnlyDataConfig(key) {
 
-    if ( !arguments.length ) throw new Error('a `key` param must be given');
-    if ( !is.str(key)      ) throw new TypeError('invalid type for `key` param');
-    if ( !has(config, key) ) throw new Error('invalid `key` param (must be a config prop)');
-
-    config[key] = CONF_VALS[key];
+    if ( is.undefined(key) ) config = fuse(config, CONF_VALS);
+    else {
+      if ( !is.str(key) ) throw new TypeError('invalid type for `key` param');
+      if ( !has(config, key) ) throw new Error('invalid `key` param (must be a config prop)');
+      config[key] = CONF_VALS[key];
+    }
   };
 
   od.construct   = newOnlyData;
