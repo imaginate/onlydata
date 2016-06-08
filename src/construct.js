@@ -116,7 +116,7 @@ function newOnlyData() {
     /** @type {string} */
     var result;
 
-    if (arguments.length < 2) throw new Error('an `obj` and `file` param must be given');
+    if ( arguments.length < 2 ) throw new Error('an `obj` and `file` param must be given');
     if ( !is.obj(obj)    ) throw new TypeError('invalid type for `obj` param');
     if ( !is.str(file)   ) throw new TypeError('invalid type for `file` param');
     if ( !hasODExt(file) ) throw new Error('invalid file extension for `file` param');
