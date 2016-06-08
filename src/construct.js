@@ -22,6 +22,7 @@ var CONF_VALS   = require('./config/values');
 var newConfig   = require('./config/construct');
 
 var vitals = require('./help/vitals');
+var each   = vitals.each;
 var fuse   = vitals.fuse;
 var get    = vitals.get;
 var has    = vitals.has;
@@ -191,34 +192,55 @@ function newOnlyData() {
   };
 
   /**
-   * Sets a configuration property for an OnlyData instance.
+   * Sets configuration properties for an OnlyData instance.
    *
-   * @param {string} key - a valid OnlyData config key
-   * @param {*} val - the new value
+   * @param {!Object=} props - new values for OnlyData config props
+   * @param {string=} key - a valid OnlyData config prop key
+   * @param {*=} val - the new value - use only with `key`
    */
-  od.setConfig = function setOnlyDataConfig(key, val) {
+  od.setConfig = function setOnlyDataConfig(props, key, val) {
 
-    if ( arguments.length < 2 ) throw new Error('a `key` and `val` param must be given');
-    if ( !is.str(key)         ) throw new TypeError('invalid type for `key` param');
-    if ( !has(config, key)    ) throw new Error('invalid `key` param (must be a config prop)');
-    if ( !CONF_TYPE[key](val) ) throw new TypeError('invalid type for `val` param');
+    if ( !arguments.length ) throw new Error('a `props` param must be given');
 
-    config[key] = val;
+    if ( is.str(props) ) {
+      if ( arguments.length < 2 ) throw new Error('a `key` and `val` param must be given');
+
+      val = key;
+      key = props;
+
+      if ( !has(config, key)    ) throw new Error('invalid `key` param (must be a config prop)');
+      if ( !CONF_TYPE[key](val) ) throw new TypeError('invalid type for `val` param');
+
+      config[key] = val;
+    }
+    else {
+      if ( !is.obj(props) ) throw new TypeError('invalid type for `props` param');
+
+      each(props, function(val, key) {
+        if ( !has(config, key)    ) throw new Error('invalid key in `props` (all must be config props)');
+        if ( !CONF_TYPE[key](val) ) throw new TypeError('invalid value type in `props`');
+
+        config[key] = val;
+      });
+    }
   };
 
   /**
    * Resets one or all configuration properties for an OnlyData instance.
    *
-   * @param {string=} key - if defined must be a valid OnlyData config key
+   * @param {...string=} key - if defined must be a valid OnlyData config key
    */
   od.resetConfig = function resetOnlyDataConfig(key) {
 
-    if ( is.undefined(key) ) config = fuse(config, CONF_VALS);
-    else {
-      if ( !is.str(key) ) throw new TypeError('invalid type for `key` param');
-      if ( !has(config, key) ) throw new Error('invalid `key` param (must be a config prop)');
-      config[key] = CONF_VALS[key];
+    if (arguments.length) {
+      each(arguments, function(key) {
+        if ( !is.str(key)      ) throw new TypeError('invalid type for a `key` param');
+        if ( !has(config, key) ) throw new Error('invalid `key` param (must be a config prop)');
+
+        config[key] = CONF_VALS[key];
+      });
     }
+    else config = fuse(config, CONF_VALS);
   };
 
   od.construct   = newOnlyData;
