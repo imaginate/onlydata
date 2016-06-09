@@ -19,7 +19,7 @@ var trimBaseKey = require('./base-key/trim');
 
 var isBlock   = require('./is-blocked-string');
 var isBoolean = require('./boolean/is');
-var isComment = require('./is-comment');
+var isComment = require('./comment/is');
 var isImport  = require('./is-import');
 var isList    = require('./is-list');
 var isMap     = require('./is-map');
