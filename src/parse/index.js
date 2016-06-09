@@ -18,7 +18,7 @@ var getBaseKey  = require('./base-key/get');
 var trimBaseKey = require('./base-key/trim');
 
 var isBlock   = require('./is-blocked-string');
-var isBoolean = require('./is-boolean');
+var isBoolean = require('./boolean/is');
 var isComment = require('./is-comment');
 var isImport  = require('./is-import');
 var isList    = require('./is-list');
@@ -28,7 +28,7 @@ var isNumber  = require('./is-number');
 var isQuoted  = require('./is-quoted-string');
 
 var parseBlock   = require('./parse-blocked-string');
-var parseBoolean = require('./parse-boolean');
+var parseBoolean = require('./boolean/parse');
 var parseImport  = require('./parse-import');
 var parseList    = require('./parse-list');
 var parseMap     = require('./parse-map');
