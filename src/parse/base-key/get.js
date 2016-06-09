@@ -14,14 +14,36 @@
 
 'use strict';
 
-var cut = require('../help/vitals').cut;
+var isValidKey = require('./has');
 
-var KEY = /^[^=]+=[ \t\v]*/;
+var vitals = require('../../help/vitals');
+var cut    = vitals.cut;
+var fuse   = vitals.fuse;
+
+var NOT_KEY = / *[=:].*$/;
 
 /**
  * @param {string} line
+ * @param {number} i
+ * @param {string} file
  * @return {string}
  */
-module.exports = function trimBaseKey(line) {
-  return cut(line, KEY);
+module.exports = function getBaseKey(line, i, file) {
+
+  if ( !isValidKey(line) ) throw new Error( errMsg(i, file) );
+
+  return cut(line, NOT_KEY);
 };
+
+/**
+ * @private
+ * @param {number} i
+ * @param {string} file
+ * @return {string}
+ */
+function errMsg(i, file) {
+  ++i;
+  return file
+    ? fuse('invalid base key at line `', i, '` in file `', file, '`')
+    : fuse('invalid base key at line `', i, '`');
+}

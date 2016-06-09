@@ -14,14 +14,14 @@
 
 'use strict';
 
-var has = require('../help/vitals').has;
+var cut = require('../../help/vitals').cut;
 
-var KEY = /^[a-z_][a-z0-9_-]*[ \t\v]*=/i;
+var KEY = /^[^=]+=[ \t\v]*/;
 
 /**
  * @param {string} line
- * @return {boolean}
+ * @return {string}
  */
-module.exports = function hasBaseKey(line) {
-  return has(line, KEY);
+module.exports = function trimBaseKey(line) {
+  return cut(line, KEY);
 };

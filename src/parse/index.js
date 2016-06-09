@@ -14,8 +14,8 @@
 
 'use strict';
 
-var getBaseKey  = require('./get-base-key');
-var trimBaseKey = require('./trim-base-key');
+var getBaseKey  = require('./base-key/get');
+var trimBaseKey = require('./base-key/trim');
 
 var isBlock   = require('./is-blocked-string');
 var isBoolean = require('./is-boolean');
