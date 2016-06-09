@@ -135,12 +135,16 @@ function newOnlyData() {
    */
   od.parse = function parseOnlyData(str) {
 
+    /** @type {string} */
+    var file;
+
     if ( !arguments.length ) throw new Error('a `str` param must be given');
     if ( !is.str(str) ) throw new TypeError('invalid type for `str` param');
 
     if ( is.file(str) ) {
       if ( !hasODExt(str) ) throw new Error('invalid file extension for `str` param');
-      str = get.file(str, {
+      file = str;
+      str = get.file(file, {
         'buffer':   false,
         'encoding': 'utf8',
         'eol':      'LF'
@@ -148,7 +152,7 @@ function newOnlyData() {
     }
     else str = normalize(str);
 
-    return parse(config, str);
+    return parse(config, str, file);
   };
 
   /**
@@ -188,7 +192,7 @@ function newOnlyData() {
       'encoding': 'utf8',
       'eol':      'LF'
     });
-    return parse(config, content);
+    return parse(config, content, file);
   };
 
   /**
