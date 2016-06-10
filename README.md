@@ -156,6 +156,7 @@ key = YES
       <p>I am a blocked string.</p>
     </div>
     >>
+
     str = <<<
     # Keeps comments, whitespace, and line breaks
     <div>
@@ -182,11 +183,14 @@ key = YES
     num = +5.01
     num = -5.09
     num = 1.234
+
     num = 3E+5
     num = 3E-5
     num = 3e10
+
     num = 4.3e-10
     num = 4.899E5
+
     num = 54,321.123_45
     num = -54,321.123_45e6
     ```
@@ -232,7 +236,7 @@ Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensi
 ```
 key = import ../path/to/file.od
 key = Import ./path/to/file.only
-key = import all/files/*.onlydata
+key = IMPORT all/files/*.onlydata
 ```
 
 ## Other Details
