@@ -116,13 +116,31 @@ key = YES
     ```
 
 #### Number
-All positive or negative whole numbers that pass the [Number.isSafeInteger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger) test. Numbers may be preceded by a plus, ```+```, or minus, ```-```, sign and contain commas, ```,```, for increased clarity. If a number does not pass the isSafeInteger test (e.g. a decimal) then it is saved as a string.
-```
-num = +5
-num = -5
-num = 1000
-num = 1,000
-```
+- **Integer**<br>
+  All positive or negative whole numbers within the [signed 64-bit integer](https://en.wikipedia.org/wiki/Integer_(computer_science)#Long_integer) range. Integers may be preceded by a plus, ```+```, or minus, ```-```, sign and contain commas, ```,```, between groups of three digits for increased clarity.
+
+    ```
+    num = +5
+    num = -5
+    num = 1000
+    num = 1,000
+    ```
+
+- **Float**<br>
+  All positive or negative fractions and exponentially-expressed numbers within the [64-bit double-precision float](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) range. The decimal mark, ```.```, is used to indicate fractional portions, and the exponential mark, ```e``` (not case-sensitive), to indicate exponents. Floats may be preceded by a plus, ```+```, or minus, ```-```, sign, contain commas, ```,```, between groups of three digits preceding the decimal and exponential mark, contain underscores, ```_```, between groups of three digits following the decimal mark and preceding the exponential mark, and precede an exponent with a plus, ```+```, or minus, ```-```, sign.
+
+    ```
+    num = +5.01
+    num = -5.09
+    num = 1.234
+    num = 3E+5
+    num = 3E-5
+    num = 3e10
+    num = 4.3e-10
+    num = 4.899E5
+    num = 54,321.123_45
+    num = -54,321.123_45e6
+    ```
 
 #### Map
 Maps are simple [key](#keys)/[value](#values) [associative arrays](https://en.wikipedia.org/wiki/Associative_array). Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. For one line maps, key/value pairs must be separated by a comma, ```,```, and [strings](#string) must be quoted. For multi-line maps, key/value pairs must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing curly braces.
