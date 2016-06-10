@@ -5,6 +5,7 @@ _OnlyData_ is a simple, flexible, and human-readable data serialization language
 ## Contents
 - [Example](#example)
 - [Files](#files)
+- [Comments](#comments)
 - [Keys](#keys)
 - [Values](#values)
 - [Data Types](#data-types)
@@ -55,6 +56,11 @@ map12 = import yes-siree.od
 - [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoding is mandatory.
 - File extensions must be ```.od```, ```.only```, or ```.onlydata```.
 - Line breaks are automatically converted to [line feeds](https://en.wikipedia.org/wiki/Newline).
+
+### Comments
+- Initialized by a hash mark, ```#```.
+- Terminated by a line break.
+- Can begin at any point on a line.
 
 ### Keys
 - Keys must begin with a letter, a-z (not case-sensitive), or an underscore.
