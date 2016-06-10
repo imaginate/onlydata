@@ -19,36 +19,79 @@ _OnlyData_ is a simple, flexible, and human-readable data serialization language
 
 ## Example
 ```
-# Comment
-bool1 = true
-str2  = a string
-map3  = {
-  num1: 5
-  nil2: null
+########################################
+## QUICK
+
+str  = simple strings
+num  = 105
+bool = true
+none = null
+map  = {
+  key: value
+  key: value
 }
-list4 = [ 0, 1, 3, 'string' ]
-str6 = how could you # Comment all you like I won't hear
-str7 = 'listen here # We are all ears'
-str8 = " keep your space bro "
-str9 = <<
-  # Still can't hear you
+list = [ value, value, value ] # comment
+
+########################################
+## CLEAR
+
+str = enjoy "unencumbered quoting"
+str = "clarify strings by wrapping"
+str = 'fearlessly feel unescaped's power'
+
+num = +105
+num = -15e3
+num = 54,321.123_45
+
+bool = yes
+bool = True
+bool = TRUE
+
+none = nil
+none = Null
+none = NULL
+
+map = { key: value, key: value }
+map = {
+  key: value,
+  key: value,
+}
+
+list = [ value, value, value, ]
+list = [
+  value
+  value
+]
+
+########################################
+## DEEP
+
+str = " keep your space bro "
+str = '# no comment needed'
+str = '[ special chars ]'
+
+str = <<
+  # trim ${comments} ${whitespace} ${line-breaks}
   <div>
+    <h1>Be Blocky</h1>
     <p>Lorem ipsum madness!</p>
   </div>
-  # If only a trimming could be avoided
-  # But alas, my whitespace and line breaks could not be saved
 >>
-str10 = <<<
+str = <<<
+  <h2>Raw Power</h2>
   <ol>
     <li>I am keeping your comments!</li>
     <li># Why?</li>
     <li>Because I want to.</li>
     <li># Ok</li>
-    <li>Plus your whitespace too.</li>
+    <li>And your whitespace too.</li>
   </ol>
 >>>
-bool11 = No
-map12 = import yes-siree.od
+
+map = import ./yes-siree.onlydata
+map = {
+  map: Import nest-cleanly.od
+}
 ```
 
 ### Files
