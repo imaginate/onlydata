@@ -242,18 +242,46 @@ Maps are simple key/value [associative arrays](https://en.wikipedia.org/wiki/Ass
   ```
 
 ### List
-Lists are simple indexed [arrays](https://en.wikipedia.org/wiki/Array_data_type) of [values](#values). Lists must be enclosed with square brackets, ```[``` and ```]```. For one line lists, values must be separated by a comma, ```,```. For multi-line lists, values must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing square brackets.
-```
-list = [ value, value ]
-list = [
-  value
-  value
-]
-list = [
-  value,
-  value,
-]
-```
+Lists are simple indexed [arrays](https://en.wikipedia.org/wiki/Array_data_type) of [values](#values). Lists must be enclosed with square brackets, ```[``` and ```]```.
+- **Inline Lists**<br>
+  - Values must be separated by a comma, ```,```.
+  - A comma is optional for the last value.
+  - [Strings](#string) must be quoted (i.e. basic and blocked strings are not allowed).
+  - [Numbers](#number) must use underscores for any clarity marks (i.e. do not use commas).
+  - [Maps](#map), [lists](#list), and [importing](#import) are not allowed (i.e. use a multi-line list).
+  <br><br>
+
+  ```
+  list = [ value, value, value ]
+  list = [ value, value, value, ]
+  ```
+
+- **Multi-line Lists**<br>
+  - Values are not allowed on the same line as the opening and closing square brackets.
+  - Values must be separated by a line break.
+  - Values may be separated by a comma and line break.
+  - If a comma is used to separate values, a comma is optional for the value.
+  - Blocked [strings](#string) are not allowed (i.e. keep strings to one-line).
+  - [Maps](#map) and [lists](#list) must be inline (i.e. deep nesting is only allowed via [importing](#import)).
+  <br><br>
+
+  ```
+  list = [
+    value
+    value
+    value
+  ]
+  list = [
+    value,
+    value,
+    value
+  ]
+  list = [
+    value,
+    value,
+    value,
+  ]
+  ```
 
 ### Null
 Null is used to represent all empty, missing, or undefined values. The keywords ```null``` or ```nil``` (not case-sensitive) are used to represent a null value.
