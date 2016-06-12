@@ -19,7 +19,7 @@ _OnlyData_ is a simple, flexible, and human-readable data serialization language
 - [Parsers](#parsers)
 - [More](#more)
 
-### Example
+## Example
 ```
 ########################################
 ## QUICK
@@ -96,18 +96,18 @@ map = {
 }
 ```
 
-### Files
+## Files
 - Each OnlyData file is equivalent to one [map](#map).
 - [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoding is mandatory.
 - File extensions must be ```.od```, ```.only```, or ```.onlydata```.
 - Line breaks are automatically converted to [line feeds](https://en.wikipedia.org/wiki/Newline).
 
-### Comments
+## Comments
 - Initialized by a hash mark, ```#```.
 - Terminated by a line break.
 - Can begin at any point on a line.
 
-### Keys
+## Keys
 - Keys must begin with a letter, a-z (not case-sensitive), or an underscore.
 - Keys can contain letters, numbers, underscores, or dashes.
 - Base keys use the equal sign, ```=```, to attribute value.
@@ -115,15 +115,15 @@ map = {
 - Whitespace is trimmed before and after each key.
 - Keys must include a [value](#values).
 
-### Values
+## Values
 - All values except for [string blocks](#string), [maps](#map), and [lists](#list) are terminated by line breaks.
 - Whitespace is trimmed before and after each value.
 - Base values can be any [data type](#data-types).
 - Nested values (i.e. values within nested [maps](#map) or [lists](#list)) can be any one line [data type](#data-types).
 
-### Data Types
+## Data Types
 
-#### Boolean
+### Boolean
 The standard ```true``` or ```false``` boolean values with optional ```yes``` or ```no``` aliases. Booleans are **not case-sensitive**.
 ```
 key = false
@@ -131,7 +131,7 @@ key = True
 key = YES
 ```
 
-#### String
+### String
 - **Basic String**<br>
   All line-terminated values that do not match another data type are trimmed of whitespace and considered a string.
 
@@ -167,7 +167,7 @@ key = YES
     >>>
     ```
 
-#### Number
+### Number
 - **Integer**<br>
   All positive or negative whole numbers within the [signed 64-bit integer](https://en.wikipedia.org/wiki/Integer_(computer_science)#Long_integer) range. Integers may be preceded by a plus, ```+```, or minus, ```-```, sign and contain commas, ```,```, between groups of three digits for increased clarity.
 
@@ -197,7 +197,7 @@ key = YES
     num = -54,321.123_45e6
     ```
 
-#### Map
+### Map
 Maps are simple [key](#keys)/[value](#values) [associative arrays](https://en.wikipedia.org/wiki/Associative_array). Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. For one line maps, key/value pairs must be separated by a comma, ```,```, and [strings](#string) must be quoted. For multi-line maps, key/value pairs must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing curly braces.
 ```
 map = { key: value, key: value }
@@ -212,7 +212,7 @@ map = {
 map = import path/to/file.onlydata
 ```
 
-#### List
+### List
 Lists are simple indexed [arrays](https://en.wikipedia.org/wiki/Array_data_type) of [values](#values). Lists must be enclosed with square brackets, ```[``` and ```]```. For one line lists, values must be separated by a comma, ```,```. For multi-line lists, values must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing square brackets.
 ```
 list = [ value, value ]
@@ -226,14 +226,14 @@ list = [
 ]
 ```
 
-#### Null
+### Null
 Null is used to represent all empty, missing, or undefined values. The keywords ```null``` or ```nil``` (not case-sensitive) are used to represent a null value.
 ```
 key = null
 key = NIL
 ```
 
-### Import
+## Import
 Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). A relative or absolute path may be used for the OnlyData file. Additionally, a value from the parser instance configuration's ```import-base``` map may used as the base path via the at symbol, ```@```, followed by the key name. To import all files from a directory into one map with the each filename (with leading path and extension trimmed) as key and its map as value, an asterisk, ```*```, may be used in place of the filename.
 ```
 key = import /abs/path/to/file.od
@@ -242,10 +242,10 @@ key = Import rel/path/to/files/*.only
 key = IMPORT @base/path/to/file.onlydata
 ```
 
-### Parsers
+## Parsers
 - [node.js](http://onlydata.tech/node)
 
-### More
+## More
 **contributing:** [see contributing guide](https://github.com/imaginate/onlydata/blob/master/CONTRIBUTING.md)<br>
 **bugs/improvements:** [open an issue](https://github.com/imaginate/onlydata/issues)<br>
 **questions:** adam@imaginate.life
