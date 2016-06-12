@@ -88,9 +88,9 @@ str = <<<
   </ol>
 >>>
 
-map = import ./yes-siree.onlydata
+map = import ./yes/siree.onlydata
 map = {
-  map: Import nest-cleanly.od
+  map: Import @base/nest/cleanly.od
 }
 ```
 
@@ -232,11 +232,12 @@ key = NIL
 ```
 
 ### Import
-Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). If a relative path is given, the file is searched in relation to the calling file. Otherwise ```config['import-root'] || process.cwd();``` is used as the base path. To import all files from a directory into one map with the each filename (with leading path and extension trimmed) as key and its map as value, an asterisk, ```*```, may be used in place of the filename.
+Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). A relative or absolute path may be used for the OnlyData file. Additionally, a value from the parser instance configuration's ```import-base``` map may used as the base path via the at symbol, ```@```, followed by the key name. To import all files from a directory into one map with the each filename (with leading path and extension trimmed) as key and its map as value, an asterisk, ```*```, may be used in place of the filename.
 ```
-key = import ../path/to/file.od
-key = Import ./path/to/file.only
-key = IMPORT all/files/*.onlydata
+key = import /abs/path/to/file.od
+key = import ../rel/path/to/file.od
+key = Import rel/path/to/files/*.only
+key = IMPORT @base/path/to/file.onlydata
 ```
 
 ## Other Details
