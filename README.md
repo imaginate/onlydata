@@ -200,19 +200,46 @@ key = YES
     ```
 
 ### Map
-Maps are simple [key](#keys)/[value](#values) [associative arrays](https://en.wikipedia.org/wiki/Associative_array). Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. For one line maps, key/value pairs must be separated by a comma, ```,```, and [strings](#string) must be quoted. For multi-line maps, key/value pairs must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing curly braces.
-```
-map = { key: value, key: value }
-map = {
-  key: value
-  key: value
-}
-map = {
-  key: value,
-  key: value,
-}
-map = import path/to/file.onlydata
-```
+Maps are simple key/value [associative arrays](https://en.wikipedia.org/wiki/Associative_array). Nested maps must be enclosed with curly braces, ```{``` and ```}```, unless [importing](#import) a separate file. Note that deep nesting is strictly limited to encourage simple data structures and when necessary the use of separate pages (i.e. [importing](#import)) to break down more complex structures.
+- **Inline Maps**<br>
+  - [Key](#keys)/[value](#values) pairs must be separated by a comma, ```,```.
+  - A comma is optional for the last key/value pair.
+  - [Strings](#string) must be quoted (i.e. basic and blocked strings are not allowed).
+  - [Numbers](#number) must use underscores for any clarity marks (i.e. do not use commas).
+  - [Maps](#map), [lists](#list), and [importing](#import) are not allowed (i.e. use a multi-line map).
+  <br><br>
+
+  ```
+  map = { key: value, key: value, key: value }
+  map = { key: value, key: value, key: value, }
+  ```
+
+- **Multi-line Maps**<br>
+  - [Key](#keys)/[value](#values) pairs are not allowed on the same line as the opening and closing curly braces.
+  - Key/value pairs must be separated by a line break.
+  - Key/value pairs may be separated by a comma and line break.
+  - If a comma is used to separate pairs, a comma is optional for the last key/value pair.
+  - Blocked [strings](#string) are not allowed (i.e. keep strings to one-line when nesting).
+  - [Maps](#map) and [lists](#list) must be inline (i.e. deep nesting is only allowed via [importing](#import)).
+  <br><br>
+
+  ```
+  map = {
+    key: value
+    key: value
+    key: value
+  }
+  map = {
+    key: value,
+    key: value,
+    key: value
+  }
+  map = {
+    key: value,
+    key: value,
+    key: value,
+  }
+  ```
 
 ### List
 Lists are simple indexed [arrays](https://en.wikipedia.org/wiki/Array_data_type) of [values](#values). Lists must be enclosed with square brackets, ```[``` and ```]```. For one line lists, values must be separated by a comma, ```,```. For multi-line lists, values must be separated by line breaks (additional commas are optional) and cannot exist on the same line as the opening and closing square brackets.
