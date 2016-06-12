@@ -169,17 +169,18 @@ key = YES
 
 ### Number
 - **Integer**<br>
-  All positive or negative whole numbers within the [signed 64-bit integer](https://en.wikipedia.org/wiki/Integer_(computer_science)#Long_integer) range. Integers may be preceded by a plus, ```+```, or minus, ```-```, sign and contain commas, ```,```, between groups of three digits for increased clarity.
+  All positive or negative whole numbers within the [signed 64-bit integer](https://en.wikipedia.org/wiki/Integer_(computer_science)#Long_integer) range. Integers may be preceded by a plus, ```+```, or minus, ```-```, sign and contain commas, ```,```, or underscores, ```_```, between groups of three digits for increased clarity.
 
     ```
     num = +5
     num = -5
     num = 1000
     num = 1,000
+    num = 1_000
     ```
 
 - **Float**<br>
-  All positive or negative fractions and exponentially-expressed numbers within the [64-bit double-precision float](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) range. The decimal mark, ```.```, is used to indicate fractional portions, and the exponential mark, ```e``` (not case-sensitive), to indicate exponents. Floats may be preceded by a plus, ```+```, or minus, ```-```, sign, contain commas, ```,```, between groups of three digits preceding the decimal and exponential mark, contain underscores, ```_```, between groups of three digits following the decimal mark and preceding the exponential mark, and precede an exponent with a plus, ```+```, or minus, ```-```, sign.
+  All positive or negative fractions and exponentially-expressed numbers within the [64-bit double-precision float](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) range. The decimal mark, ```.```, is used to indicate fractional portions, and the exponential mark, ```e``` (not case-sensitive), to indicate exponents. Floats may be preceded by a plus, ```+```, or minus, ```-```, sign, contain commas, ```,```, or underscores, ```_```, between groups of three digits preceding the decimal and exponential mark, contain underscores, ```_```, between groups of three digits following the decimal mark and preceding the exponential mark, and precede an exponent with a plus, ```+```, or minus, ```-```, sign.
 
     ```
     num = +5.01
@@ -194,6 +195,7 @@ key = YES
     num = 4.899E5
 
     num = 54,321.123_45
+    num = 54_321.123_45
     num = -54,321.123_45e6
     ```
 
