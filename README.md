@@ -291,7 +291,7 @@ key = NIL
 ```
 
 ## Import
-Nested [maps](#map) can be imported via the ```import``` keyword (not case-sensitive). A relative or absolute path may be used for the OnlyData file. Additionally, a value from the parser configuration's ```import-base``` map may used as the base path via the at symbol, ```@```, followed by the key name. To import all files from a directory into one map with the each filename (with leading path and extension trimmed) as key and its map as value, an asterisk, ```*```, may be used in place of the filename.
+[Maps](#map) can be imported as values via the ```import``` keyword (not case-sensitive). An OnlyData filepath must follow the ```import``` keyword. Whitespace must be used to separate the keyword and filepath. An absolute or relative filepath may be used. Additionally, a value from the ```import-base``` map (parser's must allow this option to be set) may used as the base path by beginning the filepath with an at symbol, ```@```, followed by the key name and a slash, ```@key/```. To import all files from a directory into one map that uses each filename with the leading path and extension trimmed as its keys and their parsed map as its values, an asterisk, ```*```, may be used in place of the filename.
 ```
 key = import /abs/path/to/file.od
 key = import ../rel/path/to/file.od
