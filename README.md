@@ -260,7 +260,7 @@ Lists are simple indexed [arrays](https://en.wikipedia.org/wiki/Array_data_type)
   - Values are not allowed on the same line as the opening and closing square brackets.
   - Values must be separated by a line break.
   - Values may be separated by a comma and line break.
-  - If a comma is used to separate values, a comma is optional for the value.
+  - If a comma is used to separate values, a comma is optional for the last value.
   - Blocked [strings](#string) are not allowed (i.e. keep strings to one-line).
   - [Maps](#map) and [lists](#list) must be inline (i.e. deep nesting is only allowed via [importing](#import)).
   <br><br>
