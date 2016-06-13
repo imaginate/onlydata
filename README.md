@@ -1,4 +1,4 @@
-# OnlyData [![version](https://img.shields.io/badge/version-0.1.1-brightgreen.svg?style=flat)](http://onlydata.tech)
+# OnlyData [![version](https://img.shields.io/badge/version-0.1.2-brightgreen.svg?style=flat)](http://onlydata.tech)
 
 _OnlyData_ is a simple, flexible, and human-readable data serialization language.
 
