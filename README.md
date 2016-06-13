@@ -39,7 +39,9 @@ list = [ value, value, value ] # comment
 
 str = enjoy "unencumbered quoting"
 str = "clarify strings by wrapping"
-str = 'fearlessly feel unescaped's power'
+
+str = fearlessly feel unescaped's power
+str = 'safely embrace escaped\'s comfort'
 
 num = +105
 num = -15e3
@@ -101,6 +103,7 @@ map = {
 - [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoding is mandatory.
 - File extensions must be ```.od```, ```.only```, or ```.onlydata```.
 - Line breaks are automatically converted to [line feeds](https://en.wikipedia.org/wiki/Newline).
+- Backslashes are taken literally (i.e. no escape sequences) except when escaping quotation marks within quoted [strings](#string).
 
 ## Comments
 - Initialized by a hash mark, ```#```.
@@ -137,15 +140,18 @@ key = YES
 
     ```
     str = I am a basic string.
+    str = I am a basic string with "quotation marks" included.
     ```
 
 - **Quoted String**<br>
-  One line strings can be enclosed by single, ```'```, or double, ```"```, quotation marks to improve clarity, to keep whitespace and hash marks, ```#```, or to define an empty string. Quoted strings must begin and end with the chosen quotation mark. Quotation marks within strings do not need any special attention (i.e. no backslash needed). Multi-line strings must be blocked.
+  One line strings can be enclosed by single, ```'```, or double, ```"```, quotation marks to improve clarity, keep whitespace, use a special character, or define an empty string. Quoted strings must begin and end with the chosen quotation mark. Quotation marks within quoted strings that match the opening mark must be escaped (i.e. backslashed). Multi-line strings must be blocked (i.e. cannot be quoted).
 
     ```
     str = ''
     str = 'I am a quoted string.'
     str = "I am a quoted string."
+    str = 'I am a basic string with "quotation marks" included.'
+    str = "I am a basic string with \"quotation marks\" included."
     ```
 
 - **Blocked String**<br>
