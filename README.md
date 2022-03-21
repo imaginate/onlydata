@@ -377,7 +377,7 @@ key = IMPORT @base/path/to/file.onlydata
 ```
 
 ## Parsers
-- [node.js](http://onlydata.tech/node)
+- [node.js](https://github.com/imaginate/onlydata-node)
 
 ## More
 **contributing:** [see contributing guide](https://github.com/imaginate/onlydata/blob/master/CONTRIBUTING.md)<br>
