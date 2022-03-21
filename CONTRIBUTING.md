@@ -8,4 +8,4 @@
 
 ## Contact
 - **bugs and improvements:** [open an issue](https://github.com/imaginate/onlydata/issues)
-- **all other questions:** adam@imaginate.life
+- **all other questions:** imagineadamsmith@gmail.com

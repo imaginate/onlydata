@@ -1,6 +1,6 @@
-## [OnlyData](http://onlydata.tech) License
+## [OnlyData](https://github.com/imaginate/onlydata) License
 
-**Copyright 2017 Adam A Smith ([imaginate.life](http://imaginate.life))**
+**Copyright 2022 Adam A Smith ([github.com/imaginate](https://github.com/imaginate))**
 
 Licensed under the **Apache License**, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
